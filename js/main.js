@@ -1,50 +1,111 @@
-document.querySelector('#temp-form-c2f').addEventListener('submit', function(e) {
+// // Celcius to Farenheit
+
+// document.querySelector('#temp-form-c2f').addEventListener('submit', function(e) {
+
+//     //document.querySelector('.result').style.display = 'none';
+
+//     //Make laoding img appear when submit clicked
+//     document.querySelector('#loading-cf').style.display = 'block';
+
+//     //Image will only appear for 2 seconds.
+//     setTimeout(calculateResult, 2000);
+    
+//     //Stop results disappearing as soon as they are displayed.
+//     e.preventDefault();
+// });
+
+// function calculateResult() {
+//     //UI Vars
+//     const celciusInput = document.querySelector('#celcius-input');
+
+//     const farenheitOutput = document.querySelector('#farenheit');
+
+//     const tempcf = parseFloat(celciusInput.value);
+
+//     const conversioncf = (tempcf*1.8)+32;
+
+//     if(isFinite(conversioncf)) {
+//         farenheitOutput.value = conversioncf.toFixed(2);
+
+//         document.querySelector('#loading-cf').style.display = 'none';
+//     } else {
+//         showError('Please enter a valid temperature')
+//     }
+    
+// }
+
+// function showError(error) {
+//     document.querySelector('#loading-cf').style.display = 'none';
+
+//     const errorDiv = document.createElement('div');
+
+//     const card = document.querySelector('.card');
+//     const heading = document.querySelector('.heading');
+
+//     errorDiv.className = 'alert alert-danger';
+
+//     errorDiv.appendChild(document.createTextNode(error));
+
+//     card.insertBefore(errorDiv, heading);
+
+//     setTimeout(clearError, 3000);
+// }
+
+// function clearError() {
+//     document.querySelector('.alert').remove();
+// }
+
+
+// Farenheit to Celcius
+
+
+document.querySelector('#temp-form-fc').addEventListener('submit', function(e) {
 
     //document.querySelector('.result').style.display = 'none';
 
     //Make laoding img appear when submit clicked
-    document.querySelector('#loading-cf').style.display = 'block';
+    document.querySelector('#loading-fc').style.display = 'block';
 
     //Image will only appear for 2 seconds.
-    setTimeout(calculateResult, 2000);
+    setTimeout(calculateResultOne, 2000);
     
     //Stop results disappearing as soon as they are displayed.
     e.preventDefault();
 });
 
-function calculateResult() {
+function calculateResultOne() {
     //UI Vars
-    const celciusInput = document.querySelector('#celcius-input');
+    const farenheitInput = document.querySelector('#farenheit-input');
 
-    const farenheitOutput = document.querySelector('#farenheit');
+    const celciusOutput = document.querySelector('#celcius');
 
-    const temp = parseFloat(celciusInput.value);
+    const tempfc = parseFloat(farenheitInput.value);
 
-    const conversion = (temp*1.8)+32;
+    const conversionfc = (tempfc-32)/1.8;
 
-    if(isFinite(conversion)) {
-        farenheitOutput.value = conversion.toFixed(2);
+    if(isFinite(conversionfc)) {
+        celciusOutput.value = conversionfc.toFixed(2);
 
-        document.querySelector('#loading-cf').style.display = 'none';
+        document.querySelector('#loading-fc').style.display = 'none';
     } else {
-        showError('Please enter a valid temperature')
+        showErrorOne('Please enter a valid temperature')
     }
     
 }
 
-function showError(error) {
-    document.querySelector('#loading-cf').style.display = 'none';
+function showErrorOne(error) {
+    document.querySelector('#loading-fc').style.display = 'none';
 
-    const errorDiv = document.createElement('div');
+    const errorDivOne = document.createElement('div');
 
-    const card = document.querySelector('.card');
-    const heading = document.querySelector('.heading');
+    const cardOne = document.querySelector('#card-one');
+    const headingOne = document.querySelector('#heading-one');
 
-    errorDiv.className = 'alert alert-danger';
+    errorDivOne.className = 'alert alert-danger';
 
-    errorDiv.appendChild(document.createTextNode(error));
+    errorDivOne.appendChild(document.createTextNode(error));
 
-    card.insertBefore(errorDiv, heading);
+    cardOne.insertBefore(errorDivOne, headingOne);
 
     setTimeout(clearError, 3000);
 }
@@ -52,4 +113,3 @@ function showError(error) {
 function clearError() {
     document.querySelector('.alert').remove();
 }
-
