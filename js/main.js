@@ -2,10 +2,11 @@
 
 document.querySelector('#temp-form-c2f').addEventListener('submit', function(e) {
 
-    //document.querySelector('.result').style.display = 'none';
-
     //Make laoding img appear when submit clicked
     document.querySelector('#loading-cf').style.display = 'block';
+
+    //Make reset button appear
+    document.querySelector('#resetButtoncf').style.display = 'block';
 
     //Image will only appear for 2 seconds.
     setTimeout(calculateResult, 2000);
@@ -13,6 +14,7 @@ document.querySelector('#temp-form-c2f').addEventListener('submit', function(e) 
     //Stop results disappearing as soon as they are displayed.
     e.preventDefault();
 });
+
 
 function calculateResult() {
     //UI Vars
@@ -28,6 +30,7 @@ function calculateResult() {
         farenheitOutput.value = conversioncf.toFixed(2);
 
         document.querySelector('#loading-cf').style.display = 'none';
+
     } else {
         showError('Please enter a valid temperature');
         farenheitOutput.value = "";
@@ -62,10 +65,11 @@ function clearError() {
 
 document.querySelector('#temp-form-fc').addEventListener('submit', function(e) {
 
-    //document.querySelector('.result').style.display = 'none';
-
     //Make laoding img appear when submit clicked
     document.querySelector('#loading-fc').style.display = 'block';
+
+    //Make reset button appear
+    document.querySelector('#resetButtonfc').style.display = 'block';
 
     //Image will only appear for 2 seconds.
     setTimeout(calculateResultFc, 2000);
