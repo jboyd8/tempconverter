@@ -107,9 +107,9 @@ function showErrorOne(error) {
 
     cardOne.insertBefore(errorDivOne, headingOne);
 
-    setTimeout(clearError, 3000);
+    setTimeout(clearErrorOne, 3000);
 }
 
-function clearError() {
+function clearErrorOne() {
     document.querySelector('.alert').remove();
 }
