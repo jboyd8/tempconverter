@@ -29,7 +29,8 @@ function calculateResult() {
 
         document.querySelector('#loading-cf').style.display = 'none';
     } else {
-        showError('Please enter a valid temperature')
+        showError('Please enter a valid temperature');
+        farenheitOutput.value = "";
     }
     
 }
@@ -67,13 +68,13 @@ document.querySelector('#temp-form-fc').addEventListener('submit', function(e) {
     document.querySelector('#loading-fc').style.display = 'block';
 
     //Image will only appear for 2 seconds.
-    setTimeout(calculateResultOne, 2000);
+    setTimeout(calculateResultFc, 2000);
     
     //Stop results disappearing as soon as they are displayed.
     e.preventDefault();
 });
 
-function calculateResultOne() {
+function calculateResultFc() {
     //UI Vars
     const farenheitInput = document.querySelector('#farenheit-input');
 
@@ -88,28 +89,29 @@ function calculateResultOne() {
 
         document.querySelector('#loading-fc').style.display = 'none';
     } else {
-        showErrorOne('Please enter a valid temperature')
+        showErrorFc('Please enter a valid temperature');
+        celciusOutput.value = "";
     }
     
 }
 
-function showErrorOne(error) {
+function showErrorFc(error) {
     document.querySelector('#loading-fc').style.display = 'none';
 
-    const errorDivOne = document.createElement('div');
+    const errorDivFc = document.createElement('div');
 
-    const cardOne = document.querySelector('#card-one');
-    const headingOne = document.querySelector('#heading-one');
+    const cardFc = document.querySelector('#card-one');
+    const headingFc = document.querySelector('#heading-one');
 
-    errorDivOne.className = 'alert alert-danger';
+    errorDivFc.className = 'alert alert-danger';
 
-    errorDivOne.appendChild(document.createTextNode(error));
+    errorDivFc.appendChild(document.createTextNode(error));
 
-    cardOne.insertBefore(errorDivOne, headingOne);
+    cardFc.insertBefore(errorDivFc, headingFc);
 
-    setTimeout(clearErrorOne, 3000);
+    setTimeout(clearErrorFc, 3000);
 }
 
-function clearErrorOne() {
+function clearErrorFc() {
     document.querySelector('.alert').remove();
 }
