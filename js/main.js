@@ -5,9 +5,6 @@ document.querySelector('#temp-form-c2f').addEventListener('submit', function(e) 
     //Make laoding img appear when submit clicked
     document.querySelector('#loading-cf').style.display = 'block';
 
-    //Make reset button appear
-    document.querySelector('#resetButtoncf').style.display = 'block';
-
     //Image will only appear for 2 seconds.
     setTimeout(calculateResult, 2000);
     
@@ -30,6 +27,7 @@ function calculateResult() {
         farenheitOutput.value = conversioncf.toFixed(2);
 
         document.querySelector('#loading-cf').style.display = 'none';
+        document.querySelector('#resetButtoncf').style.display = 'block';
 
     } else {
         showError('Please enter a valid temperature');
@@ -68,9 +66,6 @@ document.querySelector('#temp-form-fc').addEventListener('submit', function(e) {
     //Make laoding img appear when submit clicked
     document.querySelector('#loading-fc').style.display = 'block';
 
-    //Make reset button appear
-    document.querySelector('#resetButtonfc').style.display = 'block';
-
     //Image will only appear for 2 seconds.
     setTimeout(calculateResultFc, 2000);
     
@@ -92,6 +87,7 @@ function calculateResultFc() {
         celciusOutput.value = conversionfc.toFixed(2);
 
         document.querySelector('#loading-fc').style.display = 'none';
+        document.querySelector('#resetButtonfc').style.display = 'block';
     } else {
         showErrorFc('Please enter a valid temperature');
         celciusOutput.value = "";
